@@ -1,0 +1,28 @@
+<head>
+  <title>chat</title>
+</head>
+
+<body>
+  {{> transcript}}
+  {{> entry}}
+</body>
+
+<template name="transcript">
+  <div>
+  {{#each items}}
+    <div>{{> item}}</div>
+  {{/each}}
+  </div>
+</template>
+
+<template name="item">
+  {{text}}
+  <div class="date">Sent at {{date}}</div>
+</template>
+
+<template name="entry">
+  <form id="send">
+    <textarea rows="3" id="new_chat"></textarea>
+    <input type="submit" value="Send" id="send" />
+  </form>
+</template>
